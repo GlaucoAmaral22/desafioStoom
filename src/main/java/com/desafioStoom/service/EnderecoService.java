@@ -61,7 +61,7 @@ public class EnderecoService {
         rep.deleteById(id);
     }
 
-    public void insereLocation(EnderecoEntity enderecoEntity){
+    private void insereLocation(EnderecoEntity enderecoEntity){
         if(enderecoEntity.getLatitude() == null || enderecoEntity.getLongitude() == null){
             SaidaGeoCoding.Location location = googleService.getLocation(enderecoEntity);
             enderecoEntity.setLatitude(location.getLat());
